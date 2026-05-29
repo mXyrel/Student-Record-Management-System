@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+ 
+<VBox xmlns:fx="http://javafx.com/fxml"
+  	fx:controller="Controller"
+  	spacing="12"
+  	style="-fx-padding: 20; -fx-background-color: #f4f4f4;">
+ 
+	<!-- ── Title ─────────────────────────────────────── -->
+	<Label text="Student Record Management System"
+       	style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+ 
+	<!-- ── Input Form ────────────────────────────────── -->
+	<GridPane hgap="10" vgap="8">
+    	<Label text="Name:"   GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    	<TextField fx:id="txtName" promptText="Full Name"
+                   GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   prefWidth="220"/>
+ 
+    	<Label text="Course:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    	<TextField fx:id="txtCourse" promptText="e.g. BSIT"
+                   GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   prefWidth="220"/>
+ 
+    	<Label text="Year Level:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    	<ChoiceBox fx:id="cbYear"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   prefWidth="220"/>
+	</GridPane>
+ 
+	<!-- ── Buttons ───────────────────────────────────── -->
+	<HBox spacing="10">
+    	<Button text="Add"	onAction="#addStudent"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white;"/>
+    	<Button text="Update" onAction="#updateStudent"
+                style="-fx-background-color: #FF9800; -fx-text-fill: white;"/>
+    	<Button text="Delete" onAction="#deleteStudent"
+                style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+    	<Button text="Clear"  onAction="#clearFields"
+                style="-fx-background-color: #9E9E9E; -fx-text-fill: white;"/>
+	</HBox>
+ 
+	<!-- ── TableView ─────────────────────────────────── -->
+	<TableView fx:id="table" VBox.vgrow="ALWAYS">
+    	<columns>
+        	<TableColumn fx:id="colId"     text="ID"         prefWidth="50"/>
+        	<TableColumn fx:id="colName"   text="Name"       prefWidth="200"/>
+        	<TableColumn fx:id="colCourse" text="Course" 	prefWidth="150"/>
+        	<TableColumn fx:id="colYear"   text="Year Level" prefWidth="120"/>
+    	</columns>
+	</TableView>
+ 
+</VBox>

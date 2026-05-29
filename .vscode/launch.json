@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run StudentManagement",
+            "request": "launch",
+            "mainClass": "MainApp",
+            "classPaths": [
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/resources",
+                "${workspaceFolder}/lib/*",
+                "${workspaceFolder}/javafx-sdk/lib/*"
+            ],
+            "vmArgs": "--module-path ${workspaceFolder}/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
